@@ -4,11 +4,15 @@ docker-compose up
 ```
 
 # Reusing
-- copy the docker-compose.yml along with the python folder
-  - change line 6 to be `- /PATH/TO/MY/CODE/FOLDER:/code`
-  - change line 7 to be `command: python MY_PYTHON_COMMAND.py`
-  - change line 9 `- "8000:PYTHON_LISTENING_PORT"`
-- edit python/requirements.txt and update it with your pip requirements
+- edit the .env file
+  - change WEB_ROOT to be the path to your folder
+    - it should look like `WEB_ROOT=/PATH/TO/MY/CODE/FOLDER`
+  - change PUBLIC_PORT to be the the port you want to access the server on
+    - it should look like `PUBLIC_PORT=8080`
+  - change RUN_COMMAND to be how you start the server
+    - The server should always listen on port 5000
+- additionally edit python/requirements.txt and update it with your pip requirements
+  - run docker-compose build as necessary
 
 # creating a simple application
 ```bash
