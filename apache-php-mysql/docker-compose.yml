@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build: lamp-image
+    ports:
+      - "${PUBLIC_PORT}:80"
+    depends_on:
+      - db
+    environment:
+      MY_DOMAIN_NAME: ${DOMAIN_NAME}
+    volumes:
+      -  ${WEB_ROOT}:/var/www/html
+  db:
+    image: "mysql:5"
+    volumes:
+      - ${DATA_ROOT}:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_secret
