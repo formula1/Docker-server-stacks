@@ -16,5 +16,5 @@ docker-compose up
 
 # creating a simple application
 ```bash
-docker-compose -f ./path/to/docker-compose.yml run web django-admin startproject example .
+bash create-example.sh
 ```
