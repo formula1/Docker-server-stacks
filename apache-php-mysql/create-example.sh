@@ -13,4 +13,3 @@ echo "<?php \
   \$cfg['Servers'][1]['host'] = 'db'; \
   \$cfg['Servers'][1]['root_secret'] = 'root_secret'; \
 " > ./example/web_root/config.inc.php
-\$cfg[\"Server\"][0] = array( \"host\"=>\"db\" );"
